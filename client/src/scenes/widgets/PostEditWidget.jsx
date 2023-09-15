@@ -43,7 +43,7 @@ import {
     const medium = palette.neutral.medium;
   
     const getPost = async () => {
-        const response = await fetch(`http://localhost:3001/posts/getPost/${postId}`, {
+        const response = await fetch(`/posts/getPost/${postId}`, {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -71,7 +71,7 @@ import {
         formData.append("picturePath", image.name);
       }
       console.log('formData',formData);
-      const response = await fetch(`http://localhost:3001/posts/editPost`, {
+      const response = await fetch(`/posts/editPost`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
